@@ -1,0 +1,7 @@
+ARG_ENABLE('zendmmobserver', 'zendmmobserver support', 'no');
+
+if (PHP_ZENDMMOBSERVER != 'no') {
+	AC_DEFINE('HAVE_ZENDMMOBSERVER', 1, 'zendmmobserver support enabled');
+
+	EXTENSION('zendmmobserver', 'zendmmobserver.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
